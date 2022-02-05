@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_admin"
+    app:startDestination="@id/adminFragment">
+
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="com.zerotb.zero.ui.home.home.AdminFragment"
+        android:label="fragment_admin"
+        tools:layout="@layout/fragment_admin" >
+        <action
+            android:id="@+id/action_adminFragment_to_entryFragment"
+            app:destination="@id/entryFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_adminFragment_to_patientFragment"
+            app:destination="@id/patientFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.zerotb.zero.ui.home.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_accountFragment"
+            app:destination="@id/accountFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.zerotb.zero.ui.home.settings.account.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+        <argument
+            android:name="user"
+            app:argType="com.zerotb.zero.data.responses.data.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/entryFragment"
+        android:name="com.zerotb.zero.ui.home.home.entry.EntryFragment"
+        android:label="fragment_entry"
+        tools:layout="@layout/fragment_entry" >
+        <action
+            android:id="@+id/action_entryFragment_to_adminFragment"
+            app:destination="@id/adminFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/adminFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/patientFragment"
+        android:name="com.zerotb.zero.ui.home.home.patient.PatientFragment"
+        android:label="fragment_patient"
+        tools:layout="@layout/fragment_patient" >
+        <action
+            android:id="@+id/action_patientFragment_to_patientPopup"
+            app:destination="@id/patientPopup"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <dialog
+        android:id="@+id/patientPopup"
+        android:name="com.zerotb.zero.ui.home.home.patient.popup.PatientPopup"
+        android:label="popup_patient"
+        tools:layout="@layout/popup_patient" >
+        <argument
+            android:name="user"
+            app:argType="com.zerotb.zero.data.responses.data.User" />
+        <action
+            android:id="@+id/action_patientPopup_to_pillFragment"
+            app:destination="@id/pillFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/patientPopup"
+            app:popUpToInclusive="true" />
+    </dialog>
+    <fragment
+        android:id="@+id/pillFragment"
+        android:name="com.zerotb.zero.ui.home.home.patient.popup.pill.PillFragment"
+        android:label="fragment_pill"
+        tools:layout="@layout/fragment_pill" >
+        <argument
+            android:name="user"
+            app:argType="com.zerotb.zero.data.responses.data.User" />
+        <action
+            android:id="@+id/action_pillFragment_to_drugFragment"
+            app:destination="@id/drugFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_pillFragment_to_pillPopup"
+            app:destination="@id/pillPopup"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_pillFragment_to_medicalFragment"
+            app:destination="@id/medicalFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/drugFragment"
+        android:name="com.zerotb.zero.ui.home.home.patient.popup.pill.drug.DrugFragment"
+        android:label="fragment_drug"
+        tools:layout="@layout/fragment_drug" >
+        <argument
+            android:name="user"
+            app:argType="com.zerotb.zero.data.responses.data.User" />
+        <action
+            android:id="@+id/action_drugFragment_to_pillFragment"
+            app:destination="@id/pillFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/pillFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="pill"
+            app:argType="com.zerotb.zero.data.responses.data.Pill"
+            app:nullable="true" />
+        <argument
+            android:name="status"
+            app:argType="string" />
+    </fragment>
+    <dialog
+        android:id="@+id/pillPopup"
+        android:name="com.zerotb.zero.ui.home.home.patient.popup.pill.popup.PillPopup"
+        android:label="popup_pill"
+        tools:layout="@layout/popup_pill" >
+        <argument
+            android:name="pill"
+            app:argType="com.zerotb.zero.data.responses.data.Pill" />
+        <action
+            android:id="@+id/action_pillPopup_to_pillFragment"
+            app:destination="@id/pillFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/pillFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_pillPopup_to_drugFragment"
+            app:destination="@id/drugFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/pillPopup"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="user"
+            app:argType="com.zerotb.zero.data.responses.data.User" />
+    </dialog>
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.zerotb.zero.ui.home.report.ReportFragment"
+        android:label="fragment_report"
+        tools:layout="@layout/fragment_report" />
+    <fragment
+        android:id="@+id/medicalFragment"
+        android:name="com.zerotb.zero.ui.home.home.patient.popup.pill.medical.MedicalFragment"
+        android:label="fragment_medical"
+        tools:layout="@layout/fragment_medical" >
+        <action
+            android:id="@+id/action_medicalFragment_to_pillFragment"
+            app:destination="@id/pillFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/pillFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="user"
+            app:argType="com.zerotb.zero.data.responses.data.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/consultFragment"
+        android:name="com.zerotb.zero.ui.home.consult.ConsultFragment"
+        android:label="fragment_consult"
+        tools:layout="@layout/fragment_consult" >
+        <action
+            android:id="@+id/action_consultFragment_to_bookFragment"
+            app:destination="@id/bookFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookFragment"
+        android:name="com.zerotb.zero.ui.home.consult.book.BookFragment"
+        android:label="fragment_book"
+        tools:layout="@layout/fragment_book" >
+        <action
+            android:id="@+id/action_bookFragment_to_consultFragment"
+            app:destination="@id/consultFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/consultFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

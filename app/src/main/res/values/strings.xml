@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Zero TB</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="medical">
+        <item>Puskesmas Perak Timur</item>
+        <item>Puskesmas Simo Mulyo</item>
+        <item>Puskesmas Banyu Urib</item>
+        <item>Puskesmas Dr. Soetomo</item>
+        <item>Puskesmas Gading</item>
+    </string-array>
+
+    <string-array name="drug">
+        <item>Isoniazid (H)</item>
+        <item>Rifampisin (R)</item>
+        <item>Pirazinamid (Z)</item>
+        <item>Streptomisin (S)</item>
+        <item>Etambutol</item>
+    </string-array>
+</resources>
